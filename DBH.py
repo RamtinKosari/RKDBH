@@ -82,8 +82,6 @@ class DBHandler():
             self.cursor.close()
             # - Close Connection
             self.connection.close()
-            # - Set Connection Status
-            self.connectionStatus = True
             # - Print Disconnection Status
             if LOG_MESSAGES:
                 print(DATABASE, SUCCESS, "Disconnected from the Database {}{}{}".format(INFO, self.DBParameters["database"], RESET))
@@ -97,5 +95,28 @@ class DBHandler():
                 print(DATABASE, FAILED, "Can Not Disconnect from the Database {}{}{}".format(ERR, e, RESET))
             # - Set Connection Status
             self.connectionStatus = False
+            # - Return False
+            return False
+    # - Method to Execute Query
+    def execQuery(self, _query: str):
+        try:
+            # - Check if Connection is Established
+            if not self.connectionStatus:
+                if LOG_FAILURES:
+                    print(DATABASE, FAILED, "Can Not Execute Query, Connection is Not Established")
+                # - Return Result
+                return results
+            # - Execute Query
+            self.cursor.execute(_query)
+            # - Get Results
+            results = self.cursor.fetchall()
+            # - Disconnect After Query Execution
+            if DISCONNECT_AFTER_QUERY:
+                self.disconnect()
+            # - Return Results
+            return results
+        except Exception as e:
+            if LOG_FAILURES:
+                print(DATABASE, FAILED, "Can Not Execute Query, Error :\n{}{}{}".format(ERR, e, RESET))
             # - Return False
             return False

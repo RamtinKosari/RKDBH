@@ -41,3 +41,6 @@ CONNECTION_AUTOCOMMIT = True
 
 # - Disable Cursor Blinking
 DISABLE_CURSOR_BLINKING = False
+
+# - Disconnect After Query Execution
+DISCONNECT_AFTER_QUERY_EXECUTION = False
