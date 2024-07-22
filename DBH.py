@@ -76,3 +76,26 @@ class DBHandler():
             # - Return False
             return False
     # - Method to Disconnect from Database
+    def disconnect(self):
+        try:
+            # - Close Cursor
+            self.cursor.close()
+            # - Close Connection
+            self.connection.close()
+            # - Set Connection Status
+            self.connectionStatus = True
+            # - Print Disconnection Status
+            if LOG_MESSAGES:
+                print(DATABASE, SUCCESS, "Disconnected from the Database {}{}{}".format(INFO, self.DBParameters["database"], RESET))
+            # - Return True
+            return True
+        except AttributeError as e:
+            if LOG_FAILURES:
+                print(DATABASE, FAILED, "Can Not Disconnect from the Database, Not Connected Already")
+        except Exception as e:
+            if LOG_FAILURES:
+                print(DATABASE, FAILED, "Can Not Disconnect from the Database {}{}{}".format(ERR, e, RESET))
+            # - Set Connection Status
+            self.connectionStatus = False
+            # - Return False
+            return False
