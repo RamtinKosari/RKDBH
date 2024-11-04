@@ -111,7 +111,7 @@ class DBHandler():
             # - Get Results
             results = self.cursor.fetchall()
             # - Disconnect After Query Execution
-            if DISCONNECT_AFTER_QUERY:
+            if DISCONNECT_AFTER_QUERY_EXECUTION:
                 self.disconnect()
             # - Return Results
             return results
