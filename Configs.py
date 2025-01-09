@@ -3,13 +3,13 @@ import psycopg2
 import os
 
 # - Database Terminal Output
-DATABASE = f'\033[38;2;0;173;173m[RKDBH]\033[0m'
+DATABASE = f'\033[38;2;20;173;173m[RKDBH]\033[0m'
 # - Warning Terminal Output
 WARNING = f'\033[38;2;255;255;0m[WARNING]\033[0m'
 # - Success Terminal Output
 SUCCESS = f'\033[38;2;0;232;0m[SUCCESS]\033[0m'
 # - Failed Terminal Output
-FAILED = f'\033[38;2;255;0;0m[FAILED]\033[0m'
+FAILED = f'\033[38;2;255;20;0m[FAILED]\033[0m'
 # - Log Terminal Output
 LOG = f'\033[38;2;153;153;153m[LOG]\033[0m'
 # - Info Color
@@ -31,7 +31,7 @@ RED = f'\033[38;2;255;0;0m'
 # symbols = "✓⚠❖⁂✘✗ ☑☐☒༻◆◈☓⬢⬡"
 
 # - Log Messages
-LOG_MESSAGES = True
+LOG_MESSAGES = False
 
 # - Log Failures
 LOG_FAILURES = True
@@ -44,3 +44,14 @@ DISABLE_CURSOR_BLINKING = False
 
 # - Disconnect After Query Execution
 DISCONNECT_AFTER_QUERY_EXECUTION = False
+
+# - Database Tables
+DB_TABLES = {
+    "galaxy_types": 0,
+    "galaxies": 1,
+    "star_types": 2,
+    "stars": 3,
+    "star_systems": 4,
+    "planet_types": 5,
+    "planets": 6
+}
