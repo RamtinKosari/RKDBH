@@ -47,7 +47,22 @@ DISCONNECT_AFTER_QUERY_EXECUTION = False
 
 # - Database Tables
 DB_TABLES = {
-    "table_with_highest_order": 0,
-    "table_with_lower_order": 1,
-    "table_with_lowest_order": 2,
+    "workouts": 0,
+    "tags": 1,
+    "projects": 2,
+    "tasks": 3,
+    "people": 4,
+    "places": 5,
+    "achievements": 6,
+    "challenges": 7,
+    "musics": 8,
+    "meals": 9,
+    "entertainments": 10,
+    "social_media": 11,
+    "health_issues": 12,
+    "self_care": 13,
+    "biggest_lessons": 14,
+    "new_ideas": 15,
+    "dreams": 16,
+    "days": 17
 }
