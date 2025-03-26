@@ -64,5 +64,6 @@ DB_TABLES = {
     "biggest_lessons": 14,
     "new_ideas": 15,
     "dreams": 16,
-    "days": 17
+    "locations": 17,
+    "days": 18
 }

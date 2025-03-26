@@ -100,8 +100,8 @@ class Queries:
                 dance BOOLEAN DEFAULT FALSE,
                 -- | Time Details
                 date DATE,
-                start TIMESTAMP,
-                end TIMESTAMP,
+                start_date TIMESTAMP,
+                end_date TIMESTAMP,
                 -- | Workout Details
                 workout_id INT REFERENCES workouts(id),
                 -- | Location Details
@@ -127,7 +127,7 @@ class Queries:
             CREATE TABLE workouts (
                 id SERIAL PRIMARY KEY,
                 -- | Main Details
-                day_id INT REFERENCES days(id),
+                day_id INT,
                 type TEXT,
                 details TEXT,
                 -- | Workout Details
@@ -135,8 +135,8 @@ class Queries:
                 calories DECIMAL(5,2),
                 heart_rate INT,
                 -- | Time Details
-                start TIMESTAMP,
-                end TIMESTAMP,
+                start_date TIMESTAMP,
+                end_date TIMESTAMP,
                 duration DECIMAL(3,1) CHECK (duration BETWEEN 0 AND 24),
                 -- Walking Details
                 distance DECIMAL(5,2) DEFAULT 0,
@@ -352,7 +352,7 @@ class Queries:
                 symptoms TEXT[],
                 treatment_plan TEXT,
                 medication TEXT[],
-                start_date DATE,
+                start_date_date DATE,
                 end_date DATE,
                 status VARCHAR(50) CHECK (status IN (
                     'In Progress', 'Completed'
