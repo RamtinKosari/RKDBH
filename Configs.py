@@ -44,3 +44,10 @@ DISABLE_CURSOR_BLINKING = False
 
 # - Disconnect After Query Execution
 DISCONNECT_AFTER_QUERY_EXECUTION = False
+
+# - Database Tables
+DB_TABLES = {
+    "table_with_highest_order": 0,
+    "table_with_lower_order": 1,
+    "table_with_lowest_order": 2,
+}
